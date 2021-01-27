@@ -7,11 +7,11 @@ function pluginFn(fn = () => {}){
 
 module.exports = (parentSelector) => {
   if(!parentSelector){
-    console.error(`you have pass parentSelector to postcss-ng-tailwind-in-components. Passed: ${parentSelector}`);
+    console.error(`\n[postcss-ng-tailwind-in-components] You have pass parentSelector. Passed: ${parentSelector}`);
     return pluginFn();
   }
   if(parentSelector[0] !== '.' && parentSelector[0] !== '#'){
-    console.error(`${parentSelector[0]} is invalid character. Selector should start with "." or "#"`);
+    console.error(`\n[postcss-ng-tailwind-in-components] "${parentSelector[0]}" is invalid character. Selector should start with "." or "#"`);
     return pluginFn();
   }
 
