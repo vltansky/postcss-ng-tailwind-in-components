@@ -5,7 +5,7 @@ function pluginFn(fn = () => {}){
   }
 }
 
-module.exports = (parentSelector) => {
+module.exports = ({parentSelector} = {}) => {
   if(!parentSelector){
     console.error(`\n[postcss-ng-tailwind-in-components] You have pass parentSelector. Passed: ${parentSelector}`);
     return pluginFn();
