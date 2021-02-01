@@ -1,6 +1,6 @@
 {
   "name": "postcss-ng-tailwind-in-components",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "PostCSS plugin to instruct angular emulated encapsulation with tailwind @apply function",
   "keywords": [
     "postcss",
@@ -17,9 +17,6 @@
   },
   "engines": {
     "node": ">=10.0"
-  },
-  "peerDependencies": {
-    "postcss": "^8.2.4"
   },
   "devDependencies": {
     "@logux/eslint-config": "^44.1.0",
