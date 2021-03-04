@@ -1,6 +1,6 @@
 {
   "name": "postcss-ng-tailwind-in-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PostCSS plugin to instruct angular emulated encapsulation with tailwind @apply function",
   "keywords": [
     "postcss",
