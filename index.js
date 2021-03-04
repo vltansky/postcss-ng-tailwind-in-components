@@ -1,6 +1,6 @@
 function pluginFn(fn = () => {}){
   return {
-    postcssPlugin: 'postcss-ng-tailwind-dark',
+    postcssPlugin: 'postcss-ng-tailwind-in-components',
     Rule: fn,
   }
 }
@@ -28,7 +28,10 @@ module.exports = ({parentSelector} = {}) => {
         }
       }
       if(hostContextCSS.length){
-        rule.selectors = rule.selectors.concat(hostContextCSS)
+        const clone = rule.clone({ selectors: hostContextCSS });
+        // console.log(clone);
+        rule.parent.insertAfter(rule, rule.clone({ selectors: hostContextCSS }))
+        // rule.selectors = rule.selectors.concat(hostContextCSS)
       }
     }
   })

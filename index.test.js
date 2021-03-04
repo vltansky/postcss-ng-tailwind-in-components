@@ -32,8 +32,17 @@ describe('Check errors', () => {
 describe('PostCSS', () => {
   it('should add :host-context', async () => {
     await run(
-      '.dark .test {}',
-      '.dark .test, :host-context(.dark) .test {}',
+      `
+      .test {}
+      .any {}
+      .dark .test {}
+      .string {}`,
+      `
+      .test {}
+      .any {}
+      .dark .test {}
+      :host-context(.dark) .test {}
+      .string {}`,
       {parentSelector: '.dark'}
     )
   })
@@ -41,7 +50,7 @@ describe('PostCSS', () => {
   it('should add :host-context to "some-parent-class"', async () => {
     await run(
       '.some-parent-class .test {}',
-      '.some-parent-class .test, :host-context(.some-parent-class) .test {}',
+      `.some-parent-class .test {}:host-context(.some-parent-class) .test {}`,
       {parentSelector: '.some-parent-class'}
     )
   })
@@ -49,7 +58,7 @@ describe('PostCSS', () => {
   it('should work with id "#some-parent-id"', async () => {
     await run(
       '#some-parent-id .test {}',
-      '#some-parent-id .test, :host-context(#some-parent-id) .test {}',
+      `#some-parent-id .test {}:host-context(#some-parent-id) .test {}`,
       {parentSelector: '#some-parent-id'}
     )
   })
