@@ -8,7 +8,7 @@ PostCSS plugin that make Tailwind CSS function with parent selectors (like dark:
 
 ```js
 plugins: [
-  require('postcss-ng-tailwind-in-components')({ parentSelector: 'dark'});
+  require('postcss-ng-tailwind-in-components')({ parentSelector: '.dark'});
 ]
 ```
 
